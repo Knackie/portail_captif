@@ -54,12 +54,12 @@ if (isset($_GET['history']))
 		$r_array = sscanf(stristr($linearray[0],"email = "), "email = %[^&]s");
 		$date_array = sscanf(stristr($linearray[0],"20"), "%[^&]s");
 		$date = implode($date_array);
-		$login = implode($login_array);
+		$login = utf8_encode( implode($login_array));
 		$r = implode ($r_array);
 		$result .= "<tr><td>".$login."</td><td>".$r."</td><td>".$date."</td></tr>";
-		$ret.=$result;
 		
 	}
+	$ret.=$result;
 	$ret .= '</table></div>';
 	echo $ret;
 }
