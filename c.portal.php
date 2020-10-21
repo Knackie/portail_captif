@@ -13,7 +13,7 @@ if (isset($_GET['user_portal']))
 	$cpdb = captiveportal_read_db();
 	foreach ($cpdb as $user)
 	{
-		echo '<tr class="portal-user-table-row"><td width="5px"></td><td>'.$user[2].'</td><td>'.$user[4].'</td><td>'.$user[3].'</td><td>'.htmlspecialchars(date("m/d/Y H:i:s", $user[0])).'</td></tr>';
+		echo '<tr class="portal-user-table-row"><td width="5px"></td><td>'.$user[2].'</td><td>'.$user[4].'</td><td>'.htmlspecialchars(date("d/m/Y H:i:s", $user[0])).'</td></tr>';
 	}
 }
 
@@ -41,7 +41,7 @@ if (isset($_GET['history']))
 	$ret .= '<div class="portal-history-table-container">                                                                                                                     
 		<table class="portal-history-table">
 		<tr class="portal-history-table-header">
-		<td style="width:250px;">Nom  complet</td>
+		<td style="width:250px;">Nom complet</td>
 		<td style="width:200px;">Mail</td>
 		<td style="width:140px;">Date </td>
 		</tr>';
